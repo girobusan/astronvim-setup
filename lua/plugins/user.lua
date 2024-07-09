@@ -27,6 +27,8 @@ return {
         -- your configuration comes here
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
+        detection_methods = { "pattern", "lsp" },
+        silent_chdir = false,
       }
     end,
   },
@@ -40,7 +42,28 @@ return {
   },
 
   -- == Examples of Overriding Plugins ==
-
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    config = function()
+      require("neo-tree").setup {
+        hide_dotfiles = false,
+        hide_gitignored = false,
+        reveal_fsync_root_with_cwd = true,
+        respect_buf_cwd = true,
+        update_focused_file = {
+          enable = true,
+          update_root = true,
+          force_cwd = true,
+        },
+      }
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    },
+  },
   -- customize alpha options
   {
     "goolord/alpha-nvim",

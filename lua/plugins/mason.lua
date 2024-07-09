@@ -13,7 +13,7 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        -- "typescript-language-server", -- invalid
+        "tsserver",
         -- "prettier",                   -- invalid
         "eslint",
         -- add more arguments for adding more language servers
@@ -27,6 +27,7 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
+        "prettier",
         -- add more arguments for adding more null-ls sources
       },
     },
