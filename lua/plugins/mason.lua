@@ -16,7 +16,7 @@ return {
       ensure_installed = {
         "lua_ls",
         "typescript-language-server",
-        "prettier",
+        -- "prettier",
         "eslint",
         -- add more arguments for adding more language servers
       },

@@ -48,7 +48,11 @@ return {
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Find projects" },
+        ["<Leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Find projects" },
+        ["<Leader>Ump"] = { "<cmd>MarkdownPreview<cr>", desc = "Markdown preview" },
+        ["<Leader>Ums"] = { "<cmd>MarkdownPreviewStop<cr>", desc = "Markdown preview stop" },
+        ["<Leader>U"] = { name = "Utils" },
+        ["<Leader>Um"] = { name = "Markdown" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
