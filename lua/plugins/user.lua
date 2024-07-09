@@ -46,8 +46,13 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     config = function()
       require("neo-tree").setup {
-        hide_dotfiles = false,
-        hide_gitignored = false,
+        filesystem = {
+          filtered_items = {
+            visible = true,
+            hide_dotfiles = false,
+            hide_gitignored = false,
+          },
+        },
         reveal_fsync_root_with_cwd = true,
         respect_buf_cwd = true,
         update_focused_file = {
@@ -69,7 +74,7 @@ return {
     "goolord/alpha-nvim",
     opts = function(_, opts)
       -- customize the dashboard header
-      opts.section.header.opts.hl = "Keyword"
+      opts.section.header.opts.hl = "Function"
       opts.section.header.val = {
         [[                           _                              ]],
         [[                        _ooOoo_                           ]],
