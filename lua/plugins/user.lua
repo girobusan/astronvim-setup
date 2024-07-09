@@ -1,4 +1,3 @@
-
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
@@ -17,12 +16,10 @@ return {
   {
     "cryptomilk/nightcity.nvim",
     config = function()
-      require('nightcity').setup(
-       { style='kabuki'}
-    )
-   vim.cmd.colorscheme('nightcity')
-    end
-  }, 
+      require("nightcity").setup { style = "kabuki" }
+      vim.cmd.colorscheme "nightcity"
+    end,
+  },
 
   -- == Examples of Overriding Plugins ==
 
@@ -31,18 +28,27 @@ return {
     "goolord/alpha-nvim",
     opts = function(_, opts)
       -- customize the dashboard header
+      opts.section.header.opts.hl = "Keyword"
       opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ h██    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
+        [[                           _                              ]],
+        [[                        _ooOoo_                           ]],
+        [[                       o8888888o                          ]],
+        [[                       88" . "88                          ]],
+        [[                       (| -_- |)                          ]],
+        [[                       O\  =  /O                          ]],
+        [[                    ____/`---'\____                       ]],
+        [[                  .'  \\|     |//  `.                     ]],
+        [[                 /  \\|||  :  |||//  \                    ]],
+        [[                /  _||||| -:- |||||_  \                   ]],
+        [[                |   | \\\  -  /'| |   |                   ]],
+        [[                | \_|  `\`---'//  |_/ |                   ]],
+        [[                \  .-\__ `-. -'__/-.  /                   ]],
+        [[              ___`. .'  /--.--\  `. .'___                 ]],
+        [[           ."" '<  `.___\_<|>_/___.' _> \"".              ]],
+        [[          | | :  `- \`. ;`. _/; .'/ /  .' ; |             ]],
+        [[          \  \ `-.   \_\_`. _.'_/_/  -' _.' /             ]],
+        [[===========`-.`___`-.__\ \___  /__.-'_.'_.-'==============]],
+        [[                        `=--=-'                    hjw    ]],
       }
       return opts
     end,

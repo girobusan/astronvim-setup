@@ -5,10 +5,10 @@
 ---@type LazySpec
 return {
   -- use mason-lspconfig to configure LSP installations
-    -- ✓ eslint-lsp eslint
-    -- ✓ lua-language-server lua_ls
-    -- ✓ prettierd
-    -- ✓ typescript-language-server tsserver
+  -- ✓ eslint-lsp eslint
+  -- ✓ lua-language-server lua_ls
+  -- ✓ prettierd
+  -- ✓ typescript-language-server tsserver
   {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
@@ -16,8 +16,8 @@ return {
       ensure_installed = {
         "lua_ls",
         "typescript-language-server",
-        "prettierd",
-        "eslint-lsp"
+        "prettier",
+        "eslint",
         -- add more arguments for adding more language servers
       },
     },
