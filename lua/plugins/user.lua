@@ -1,21 +1,20 @@
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 local get_icon = require("astroui").get_icon
---   opts.section.buttons.val = {
---   opts.button("LDR n  ", get_icon("FileNew", 2, true) .. "New File  "),
---   opts.button("LDR f f", get_icon("Search", 2, true) .. "Find File  "),
---   opts.button("LDR f o", get_icon("DefaultFile", 2, true) .. "Recents  "),
---   opts.button("LDR f w", get_icon("WordFile", 2, true) .. "Find Word  "),
---   opts.button("LDR f '", get_icon("Bookmarks", 2, true) .. "Bookmarks  "),
---   opts.button("LDR S l", get_icon("Refresh", 2, true) .. "Last Session  "),
--- }
 
 ---@type LazySpec
 return {
 
   -- == Examples of Adding Plugins ==
-
-  "andweeb/presence.nvim",
+  -- install with yarn or npm
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  },
+  -- "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
