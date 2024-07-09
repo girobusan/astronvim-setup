@@ -1,5 +1,14 @@
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
+local get_icon = require("astroui").get_icon
+--   opts.section.buttons.val = {
+--   opts.button("LDR n  ", get_icon("FileNew", 2, true) .. "New File  "),
+--   opts.button("LDR f f", get_icon("Search", 2, true) .. "Find File  "),
+--   opts.button("LDR f o", get_icon("DefaultFile", 2, true) .. "Recents  "),
+--   opts.button("LDR f w", get_icon("WordFile", 2, true) .. "Find Word  "),
+--   opts.button("LDR f '", get_icon("Bookmarks", 2, true) .. "Bookmarks  "),
+--   opts.button("LDR S l", get_icon("Refresh", 2, true) .. "Last Session  "),
+-- }
 
 ---@type LazySpec
 return {
@@ -11,6 +20,16 @@ return {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
+  },
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end,
   },
 
   {
@@ -49,6 +68,15 @@ return {
         [[          \  \ `-.   \_\_`. _.'_/_/  -' _.' /             ]],
         [[===========`-.`___`-.__\ \___  /__.-'_.'_.-'==============]],
         [[                        `=--=-'                    hjw    ]],
+      }
+      opts.section.buttons.val = {
+        opts.button("LDR n  ", get_icon("FileNew", 2, true) .. "New File  "),
+        opts.button("LDR f f", get_icon("Search", 2, true) .. "Find File  "),
+        opts.button("LDR f o", get_icon("DefaultFile", 2, true) .. "Recents  "),
+        opts.button("LDR f p", get_icon("FolderOpen", 2, true) .. "Projects  "),
+        opts.button("LDR f w", get_icon("WordFile", 2, true) .. "Find Word  "),
+        opts.button("LDR f '", get_icon("Bookmarks", 2, true) .. "Bookmarks  "),
+        opts.button("LDR S l", get_icon("Refresh", 2, true) .. "Last Session  "),
       }
       return opts
     end,
