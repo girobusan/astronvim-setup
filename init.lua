@@ -15,8 +15,5 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
-vim.o.guifont = "FiraCode Nerd Font:h10"
-vim.opt.linespace = 2
-
 require "lazy_setup"
 require "polish"
