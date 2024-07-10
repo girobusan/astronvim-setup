@@ -90,6 +90,7 @@ return {
     opts = function(_, opts)
       -- customize the dashboard header
       opts.section.header.opts.hl = "Function"
+      opts.section.footer.opts.hl = "Comment"
       opts.section.header.val = {
         [[                           _                              ]],
         [[                        _ooOoo_                           ]],
@@ -110,6 +111,15 @@ return {
         [[          \  \ `-.   \_\_`. _.'_/_/  -' _.' /             ]],
         [[===========`-.`___`-.__\ \___  /__.-'_.'_.-'==============]],
         [[                        `=--=-'                    hjw    ]],
+      }
+      opts.config.layout = {
+        -- { type = "padding", val = vim.fn.max { 1, vim.fn.floor(vim.fn.winheight(0) * 0.2) } },
+        { type = "padding", val = 1 },
+        opts.section.header,
+        { type = "padding", val = 1 },
+        opts.section.buttons,
+        { type = "padding", val = 2 },
+        opts.section.footer,
       }
       opts.section.buttons.val = {
         opts.button("LDR n  ", get_icon("FileNew", 2, true) .. "New File  "),
