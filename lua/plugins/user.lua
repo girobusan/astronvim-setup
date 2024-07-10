@@ -52,33 +52,37 @@ return {
   },
 
   -- == Examples of Overriding Plugins ==
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    config = function()
-      require("neo-tree").setup {
-        filesystem = {
-          filtered_items = {
-            visible = true,
-            hide_dotfiles = false,
-            hide_gitignored = false,
-          },
-        },
-        reveal_fsync_root_with_cwd = true,
-        respect_buf_cwd = true,
-        update_focused_file = {
-          enable = true,
-          update_root = true,
-          force_cwd = true,
-        },
-      }
-    end,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    },
-  },
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   config = function()
+  --     require("neo-tree").setup {
+  --       filesystem = {
+  --         filtered_items = {
+  --           visible = true,
+  --           hide_dotfiles = false,
+  --           hide_gitignored = false,
+  --         },
+  --       },
+  --       source_selector = {
+  --         winbar = true,
+  --         statusline = false,
+  --       },
+  --       reveal_fsync_root_with_cwd = true,
+  --       respect_buf_cwd = true,
+  --       update_focused_file = {
+  --         enable = true,
+  --         update_root = true,
+  --         force_cwd = true,
+  --       },
+  --     }
+  --   end,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+  --     "MunifTanjim/nui.nvim",
+  --     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+  --   },
+  -- },
   -- customize alpha options
   {
     "goolord/alpha-nvim",
