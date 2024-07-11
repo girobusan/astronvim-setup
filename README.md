@@ -2,7 +2,7 @@
 
 **NOTE:** This is for AstroNvim v4+
 
-A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+Based on temmplate repo of [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
 ## What's done
 
