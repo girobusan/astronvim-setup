@@ -15,6 +15,37 @@ return {
     init = function() vim.g.mkdp_filetypes = { "markdown" } end,
     ft = { "markdown" },
   },
+  -- {
+  --     'serenevoid/kiwi.nvim',
+  --     dependencies = { 'nvim-lua/plenary.nvim' },
+  --  opts = {
+  --         {
+  --             name = "work",
+  --             path = "/home/username/wiki_1"
+  --         },
+  -- },
+  {
+    "serenevoid/kiwi.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      {
+        name = "all_mac_webdaw",
+        path = "/Volumes/webdav.yandex.ru/vimwiki",
+      },
+      -- {
+      --     name = "personal",
+      --     path = "/home/username/wiki_2"
+      -- }
+    },
+    keys = {
+      { "<leader>Uw", ':lua require("kiwi").open_wiki_index()<cr>', desc = "Open Wiki index (mac, webdav)" },
+      -- { "<leader>wp", ":lua require(\"kiwi\").open_wiki_index(\"personal\")<cr>", desc = "Open index of personal wiki" },
+      -- { "T", ":lua require(\"kiwi\").todo.toggle()<cr>", desc = "Toggle Markdown Task" }
+    },
+    lazy = true,
+  },
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
