@@ -34,13 +34,22 @@ return {
         name = "all_mac_webdaw",
         path = "/Volumes/webdav.yandex.ru/vimwiki",
       },
+      {
+        name = "local_path",
+        path = "/home/gleb/YADISK/vimwiki",
+      },
       -- {
       --     name = "personal",
       --     path = "/home/username/wiki_2"
       -- }
     },
     keys = {
-      { "<leader>Uw", ':lua require("kiwi").open_wiki_index()<cr>', desc = "Open Wiki index (mac, webdav)" },
+      { "<leader>Uwm", ':lua require("kiwi").open_wiki_index()<cr>', desc = "Open Wiki index (mac, webdav)" },
+      {
+        "<leader>Uww",
+        ':lua require("kiwi").open_wiki_index("local_path")<cr>',
+        desc = "Open Wiki index (ydisk, home)",
+      },
       -- { "<leader>wp", ":lua require(\"kiwi\").open_wiki_index(\"personal\")<cr>", desc = "Open index of personal wiki" },
       -- { "T", ":lua require(\"kiwi\").todo.toggle()<cr>", desc = "Toggle Markdown Task" }
     },
