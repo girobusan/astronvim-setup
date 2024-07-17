@@ -9,8 +9,11 @@ Based on temmplate repo of [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - \+ Markdown preview with Whichkey mappings
 - \+ Surround plugin
 - \+ Project.nvim with Whickey mapping and Alpha hint. No automatic directory change (use "native" autoroot).
-- \+ LazyGit plugin (mapping: \<Leader>gz)
 - \+ Nightcity theme, Kabuki style
+- \+ Markdown tools: render and edit
+
+---
+
 - Autoroot on by default
 - Hidden files visible in Neotree, dotfiles are shown
 - Mode block of status shows text
@@ -19,4 +22,4 @@ Based on temmplate repo of [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
 ## What's not
 
-- Additional keybindings for ToggleTerm
+- Additional **keybindings** for ToggleTerm
