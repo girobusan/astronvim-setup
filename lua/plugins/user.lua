@@ -40,6 +40,12 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
     config = function() require("render-markdown").setup {} end,
   },
+  {
+    "danymat/neogen",
+    config = true,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*"
+  },
   -- "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
