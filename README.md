@@ -11,6 +11,7 @@ Based on temmplate repo of [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - \+ Project.nvim with Whickey mapping and Alpha hint. No automatic directory change (use "native" autoroot).
 - \+ Nightcity theme, Kabuki style
 - \+ Markdown tools: render and edit
+- \+ Escape terminal by \<Esc>\<Esc>
 
 ---
 
@@ -23,3 +24,5 @@ Based on temmplate repo of [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 ## What's not
 
 - Additional **keybindings** for ToggleTerm
+
+  \*@param {string|number} [props.zIndex]
