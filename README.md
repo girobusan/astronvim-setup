@@ -12,6 +12,8 @@ Based on temmplate repo of [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - \+ Nightcity theme, Kabuki style
 - \+ Markdown tools: render and edit
 - \+ Escape terminal by \<Esc>\<Esc>
+- \+ RU keymap
+- \+ Spelling
 
 ---
 
