@@ -3,6 +3,17 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, desc = "Escape terminal (t mode)" })
+
+-- Keyboard & language
+vim.opt.keymap = "russian-jcukenwin"
+-- Язык ввода при старте Вима ≡ Английский
+vim.opt.iminsert = 0
+-- Аналогично настраивается «режим поиска»
+vim.opt.imsearch = 0
+vim.opt.spell = false --{ "spelllang" , "en_us,ru_ru,ru_yo" }
+vim.opt.spelllang = "en_us,ru_ru,ru_yo"
+-- " Чтобы вместо Ctrl-^ нажимать Ctrl-L
+vim.keymap.set("i", "<C-L>", "<C-^>", { noremap = true })
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -77,6 +88,9 @@ return {
         ["<Leader>Ums"] = { "<cmd>MarkdownPreviewStop<cr>", desc = "Markdown preview stop" },
         ["<Leader>U"] = { name = "Utils" },
         ["<Leader>Um"] = { name = "Markdown" },
+        ["<Leader>Us"] = { name = "Spell" },
+        ["<Leader>Uso"] = { "<cmd>set spell<cr>", desc = "Spell ON" },
+        ["<Leader>Usf"] = { "<cmd>set nospell<cr>", desc = "Spell OFF" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
