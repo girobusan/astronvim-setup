@@ -24,5 +24,3 @@ Based on temmplate repo of [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 ## What's not
 
 - Additional **keybindings** for ToggleTerm
-
-  \*@param {string|number} [props.zIndex]
