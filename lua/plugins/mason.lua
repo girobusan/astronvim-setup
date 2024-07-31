@@ -19,6 +19,7 @@ return {
         "html",
         "jsonls",
         "somesass_ls",
+        "openscad_lsp",
         -- add more arguments for adding more language servers
       },
     },
