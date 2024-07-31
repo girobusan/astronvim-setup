@@ -14,9 +14,11 @@ return {
       ensure_installed = {
         "lua_ls",
         "tsserver",
-        "prettier", -- invalid
         "eslint",
         "cssls",
+        "html",
+        "jsonls",
+        "somesass_ls",
         -- add more arguments for adding more language servers
       },
     },
