@@ -14,7 +14,7 @@ return {
       ensure_installed = {
         "lua_ls",
         "tsserver",
-        "prettierd", -- invalid
+        "prettier", -- invalid
         "eslint",
         "cssls",
         -- add more arguments for adding more language servers
