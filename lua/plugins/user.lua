@@ -17,6 +17,16 @@ return {
     ft = { "markdown" },
   },
   {
+    "mpas/marp-nvim",
+    config = function()
+      require("marp").setup {
+        port = 8080,
+        wait_for_response_timeout = 30,
+        wait_for_response_delay = 1,
+      }
+    end,
+  },
+  {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",

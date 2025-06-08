@@ -7,6 +7,7 @@ vim.filetype.add {
   extension = {
     ojs = "javascript",
     ejs = "html",
+    njk = "html",
   },
   filename = {
     ["README"] = "markdown",
