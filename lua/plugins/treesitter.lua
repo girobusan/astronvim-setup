@@ -14,6 +14,7 @@ return {
       "json",
       "markdown",
       "javascript",
+      -- "dartls",
       -- add more arguments for adding more treesitter parsers
     },
   },

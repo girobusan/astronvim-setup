@@ -115,6 +115,42 @@ return {
     },
   },
   {
+    "nvim-flutter/flutter-tools.nvim",
+    lazy = false,
+
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
+    },
+    config = function()
+      require("flutter-tools").setup {
+        -- flutter_lookup_cmd = "dirname $(which flutter)",
+        flutter_path = "~/bin/flutter/bin",
+        lsp = {
+          cmd = {
+            "dart",
+            "language-server",
+            "--protocol=lsp",
+            "--client-id=neovim.flutter-tools",
+            "--client-version=1.0",
+          },
+          -- Добавьте эти опции для стабильности
+          filetypes = { "dart" },
+          on_attach = function()
+            print "Dart LSP attached!" -- отладочное сообщение
+            -- Здесь можете добавить свои маппинги
+          end,
+          init_options = {
+            closingLabels = true,
+            flutterOutline = true,
+            outline = true,
+            suggestFromUnimportedLibraries = true,
+          },
+        },
+      }
+    end,
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     opts = function(_, opts)
       opts.filesystem.filtered_items.visible = true
