@@ -137,7 +137,7 @@ return {
           -- Добавьте эти опции для стабильности
           filetypes = { "dart" },
           on_attach = function()
-            print "Dart LSP attached!" -- отладочное сообщение
+            -- print "Dart LSP attached!" -- отладочное сообщение
             -- Здесь можете добавить свои маппинги
           end,
           init_options = {
