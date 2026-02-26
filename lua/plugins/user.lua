@@ -136,9 +136,34 @@ return {
           },
           -- Добавьте эти опции для стабильности
           filetypes = { "dart" },
-          on_attach = function()
+          on_attach = function(client, bufnr)
             -- print "Dart LSP attached!" -- отладочное сообщение
             -- Здесь можете добавить свои маппинги
+            local opts = { noremap = true, silent = true, buffer = bufnr }
+            -- Основные навигационные маппинги
+            vim.keymap.set("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts) -- Go to Definition
+            vim.keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- Go to Declaration
+            vim.keymap.set("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts) -- Find References
+            vim.keymap.set("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- Go to Implementation
+            -- Дополнительные полезные маппинги для Dart/Flutter
+            vim.keymap.set("n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts) -- Rename symbol
+            vim.keymap.set("n", "<leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts) -- Code actions
+            vim.keymap.set("n", "<leader>f", "<Cmd>lua vim.lsp.buf.format({async=true})<CR>", opts) -- Format code
+            -- Диагностика
+            vim.keymap.set("n", "[d", "<Cmd>lua vim.diagnostic.goto_prev()<CR>", opts) -- Previous diagnostic
+            vim.keymap.set("n", "]d", "<Cmd>lua vim.diagnostic.goto_next()<CR>", opts) -- Next diagnostic
+            vim.keymap.set("n", "<leader>e", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts) -- Show diagnostic in floating window
+
+            -- Дополнительные маппинги для flutter-tools (если нужны)
+            vim.keymap.set("n", "<leader>la", "<Cmd>FlutterRun<CR>", opts) -- Run Flutter app
+            vim.keymap.set("n", "<leader>lq", "<Cmd>FlutterQuit<CR>", opts) -- Quit Flutter app
+            vim.keymap.set("n", "<leader>lr", "<Cmd>FlutterHotReload<CR>", opts) -- Hot reload
+            vim.keymap.set("n", "<leader>lR", "<Cmd>FlutterHotRestart<CR>", opts) -- Hot restart
+            vim.keymap.set("n", "<leader>ld", "<Cmd>FlutterDevices<CR>", opts) -- Show devices
+            vim.keymap.set("n", "<leader>lD", "<Cmd>FlutterEmulators<CR>", opts) -- Show emulators
+
+            -- completion (если используете nvim-cmp)
+            if client.server_capabilities.completionProvider then vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc" end
           end,
           init_options = {
             closingLabels = true,
