@@ -140,19 +140,22 @@ return {
             -- print "Dart LSP attached!" -- отладочное сообщение
             -- Здесь можете добавить свои маппинги
             local opts = { noremap = true, silent = true, buffer = bufnr }
+            local function map(mode, lhs, rhs, desc)
+              vim.keymap.set(mode, lhs, rhs, vim.tbl_extend("force", opts, { desc = desc }))
+            end
             -- Основные навигационные маппинги
-            vim.keymap.set("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts) -- Go to Definition
-            vim.keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- Go to Declaration
-            vim.keymap.set("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts) -- Find References
-            vim.keymap.set("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- Go to Implementation
+            map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition") -- Go to Definition
+            map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Go to declaration") -- Go to Declaration
+            map("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", "Find references") -- Find References
+            map("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", "Go to implementation") -- Go to Implementation
             -- Дополнительные полезные маппинги для Dart/Flutter
-            vim.keymap.set("n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts) -- Rename symbol
-            vim.keymap.set("n", "<leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts) -- Code actions
-            vim.keymap.set("n", "<leader>f", "<Cmd>lua vim.lsp.buf.format({async=true})<CR>", opts) -- Format code
+            map("n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>", "Rename symbol") -- Rename symbol
+            map("n", "<leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code action") -- Code actions
+            map("n", "<leader>f", "<Cmd>lua vim.lsp.buf.format({async=true})<CR>", "Format code") -- Format code
             -- Диагностика
-            vim.keymap.set("n", "[d", "<Cmd>lua vim.diagnostic.goto_prev()<CR>", opts) -- Previous diagnostic
-            vim.keymap.set("n", "]d", "<Cmd>lua vim.diagnostic.goto_next()<CR>", opts) -- Next diagnostic
-            vim.keymap.set("n", "<leader>e", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts) -- Show diagnostic in floating window
+            map("n", "[d", "<Cmd>lua vim.diagnostic.goto_prev()<CR>", "Previous diagnostic") -- Previous diagnostic
+            map("n", "]d", "<Cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic") -- Next diagnostic
+            -- vim.keymap.set("n", "<leader>e", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts) -- Show diagnostic in floating window
 
             -- Дополнительные маппинги для flutter-tools (если нужны)
             vim.keymap.set("n", "<leader>la", "<Cmd>FlutterRun<CR>", opts) -- Run Flutter app
